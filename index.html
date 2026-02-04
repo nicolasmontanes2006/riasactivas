@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campamento Rías Activas | Verano 2025</title>
+    <title>Campamento Rías Activas | Verano 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <script>
@@ -72,6 +72,11 @@
             filter: grayscale(0%);
             opacity: 1;
         }
+        /* Estilos para el logo superpuesto en ropa */
+        .merch-logo {
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+        }
     </style>
 </head>
 <body class="text-gray-800 antialiased overflow-x-hidden">
@@ -98,7 +103,7 @@
     <header class="relative bg-ocean-blue pt-32 pb-48 overflow-hidden text-center text-white">
         <div class="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-sm">Verano 2025 - Horario Diurno</span>
+            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-sm">Verano 2026 - Horario Diurno</span>
             <h1 class="text-5xl md:text-7xl mb-6 leading-tight drop-shadow-md">
                 Campamento Multideporte <br> <span class="text-sun-yellow">Rías Activas</span>
             </h1>
@@ -163,7 +168,7 @@
         </div>
     </section>
 
-    <!-- Nueva Sección: Filosofía y Metodología (Info del Documento) -->
+    <!-- Nueva Sección: Filosofía y Metodología (Fotos de niños haciendo deporte) -->
     <section id="filosofia" class="py-16 bg-white border-y border-gray-100">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
@@ -185,8 +190,10 @@
             </div>
             <div class="md:w-1/2">
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1596486026857-7977a460b54f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg transform rotate-2">
-                    <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg transform -rotate-2 mt-8">
+                    <!-- Foto 1: Niños jugando/corriendo -->
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg transform rotate-2 h-48 w-full object-cover" alt="Niños corriendo">
+                    <!-- Foto 2: Niños jugando en equipo -->
+                    <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg transform -rotate-2 mt-8 h-48 w-full object-cover" alt="Juego en equipo">
                 </div>
             </div>
         </div>
@@ -213,19 +220,26 @@
         </div>
     </section>
 
-    <!-- Tienda (Fotos adecuadas) -->
+    <!-- Tienda (Fotos Personalizadas con Logo) -->
     <section id="tienda" class="py-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-4xl text-ocean-blue">Tienda Oficial</h2>
-            <p class="text-gray-500 mt-2">Equípate como un profesional.</p>
+            <p class="text-gray-500 mt-2">Equípate como un profesional para este 2026.</p>
         </div>
         
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Producto 1: Camiseta -->
+            <!-- Producto 1: Camiseta Personalizada -->
             <div class="group relative bg-white border-2 border-gray-100 rounded-3xl p-4 hover:border-ocean-blue transition duration-300">
-                <div class="aspect-square rounded-2xl bg-gray-100 mb-4 overflow-hidden flex items-center justify-center">
+                <div class="aspect-square rounded-2xl bg-gray-100 mb-4 overflow-hidden flex items-center justify-center relative">
                     <!-- Foto de camiseta blanca deportiva -->
                     <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Camiseta">
+                    <!-- Overlay Logo -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="text-center transform -rotate-2 merch-logo">
+                            <span class="block text-ocean-blue font-black text-2xl tracking-tighter">RÍAS</span>
+                            <span class="block text-active-red font-black text-2xl tracking-tighter">ACTIVAS</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex justify-between items-start">
                     <div>
@@ -237,12 +251,19 @@
                 <button class="w-full mt-4 bg-gray-900 text-white font-bold py-3 rounded-xl hover:bg-ocean-blue transition">Añadir</button>
             </div>
 
-            <!-- Producto 2: Sudadera -->
+            <!-- Producto 2: Sudadera Personalizada -->
             <div class="group relative bg-white border-2 border-gray-100 rounded-3xl p-4 hover:border-ocean-blue transition duration-300">
                 <div class="absolute top-6 right-6 bg-active-red text-white text-xs font-bold px-2 py-1 rounded z-10">TOP VENTAS</div>
-                <div class="aspect-square rounded-2xl bg-gray-100 mb-4 overflow-hidden flex items-center justify-center">
-                    <!-- Foto de sudadera con capucha -->
+                <div class="aspect-square rounded-2xl bg-gray-100 mb-4 overflow-hidden flex items-center justify-center relative">
+                    <!-- Foto de sudadera -->
                     <img src="https://images.unsplash.com/photo-1556906781-9a412961d289?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Sudadera">
+                    <!-- Overlay Logo -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="text-center transform -translate-y-4 merch-logo">
+                            <span class="block text-white font-black text-xl tracking-tighter drop-shadow-md">RÍAS</span>
+                            <span class="block text-sun-yellow font-black text-xl tracking-tighter drop-shadow-md">ACTIVAS</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex justify-between items-start">
                     <div>
@@ -254,11 +275,18 @@
                 <button class="w-full mt-4 bg-gray-900 text-white font-bold py-3 rounded-xl hover:bg-ocean-blue transition">Añadir</button>
             </div>
             
-            <!-- Producto 3: Gorra -->
+            <!-- Producto 3: Gorra Personalizada -->
             <div class="group relative bg-white border-2 border-gray-100 rounded-3xl p-4 hover:border-ocean-blue transition duration-300">
-                <div class="aspect-square rounded-2xl bg-gray-100 mb-4 overflow-hidden flex items-center justify-center">
-                    <!-- Foto de gorra de béisbol -->
+                <div class="aspect-square rounded-2xl bg-gray-100 mb-4 overflow-hidden flex items-center justify-center relative">
+                    <!-- Foto de gorra -->
                     <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Gorra">
+                    <!-- Overlay Logo -->
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none pb-4 pl-2">
+                        <div class="text-center transform -rotate-12 merch-logo bg-white/80 px-2 py-1 rounded">
+                            <span class="block text-ocean-blue font-black text-xs tracking-tighter">RÍAS</span>
+                            <span class="block text-active-red font-black text-xs tracking-tighter">ACTIVAS</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex justify-between items-start">
                     <div>
@@ -407,10 +435,11 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                © 2025 Campamento Multideporte Rías Activas. Todos los derechos reservados.
+                © 2026 Campamento Multideporte Rías Activas. Todos los derechos reservados.
             </div>
         </div>
     </footer>
 
 </body>
 </html>
+
