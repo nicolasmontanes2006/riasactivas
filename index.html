@@ -48,20 +48,16 @@
             width: calc(157% + 1.3px);
             height: 80px;
         }
-        .blob-shape {
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            animation: morph 8s ease-in-out infinite;
-        }
-        @keyframes morph {
-            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-            34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
-            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
-        }
         .hover-card {
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .hover-card:hover {
             transform: scale(1.03);
+        }
+        .dot-pattern {
+            background-color: #fdfaf5;
+            background-image: radial-gradient(#4d96ff33 1px, transparent 1px);
+            background-size: 24px 24px;
         }
         .sponsor-grayscale {
             filter: grayscale(100%);
@@ -72,220 +68,141 @@
             filter: grayscale(0%);
             opacity: 1;
         }
-        .merch-logo-overlay {
-            mix-blend-mode: multiply;
-            opacity: 0.9;
-        }
     </style>
 </head>
 <body class="text-gray-800 antialiased overflow-x-hidden">
 
-    <!-- Navbar Flotante -->
+    <!-- Navbar -->
     <nav class="fixed w-full z-50 top-4 px-4">
         <div class="max-w-6xl mx-auto bg-white/90 backdrop-blur-md rounded-full shadow-lg border-2 border-ocean-blue px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-2xl text-ocean-blue brand-font tracking-wide">
                 RÍAS<span class="text-active-red">ACTIVAS</span>
             </a>
-            <div class="hidden md:flex space-x-6 font-bold text-gray-600">
+            <div class="hidden md:flex space-x-6 font-bold text-gray-600 text-sm">
                 <a href="#actividades" class="hover:text-ocean-blue transition">Actividades</a>
-                <a href="#filosofia" class="hover:text-ocean-blue transition">Filosofía</a>
                 <a href="#lugar" class="hover:text-ocean-blue transition">Samil</a>
                 <a href="#tienda" class="hover:text-ocean-blue transition">Tienda</a>
+                <a href="#reserva" class="hover:text-ocean-blue transition">Reserva</a>
             </div>
-            <a href="#reserva" class="bg-sun-yellow text-gray-900 font-bold px-6 py-2 rounded-full hover:bg-yellow-400 transition shadow-md transform hover:-translate-y-1">
-                ¡Inscríbete!
+            <a href="#reserva" class="bg-sun-yellow text-gray-900 font-bold px-5 py-2 rounded-full hover:bg-yellow-400 transition text-sm">
+                ¡Apúntate!
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="relative bg-ocean-blue pt-32 pb-48 overflow-hidden text-center text-white">
         <div class="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-sm">Verano 2026 - Horario Diurno</span>
-            <h1 class="text-5xl md:text-7xl mb-6 leading-tight drop-shadow-md">
-                Campamento Multideporte <br> <span class="text-sun-yellow">Rías Activas</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
-                Una alternativa de ocio educativo, saludable y organizado en Samil. Desarrollo físico, social y emocional para tus hijos.
-            </p>
+            <span class="bg-white/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Vigo 2026</span>
+            <h1 class="text-5xl md:text-7xl mb-6 leading-tight">Campamento <br> <span class="text-sun-yellow">Rías Activas</span></h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">Deporte, juego y convivencia en el mejor entorno natural de Vigo.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#reserva" class="bg-active-red text-white text-xl px-8 py-4 rounded-2xl brand-font shadow-lg hover:bg-red-500 transition border-b-4 border-red-700 active:border-b-0 active:translate-y-1">
-                    Apuntarse (160€)
-                </a>
-                <a href="#actividades" class="bg-white text-ocean-blue text-xl px-8 py-4 rounded-2xl brand-font shadow-lg hover:bg-gray-100 transition border-b-4 border-gray-300 active:border-b-0 active:translate-y-1">
-                    Ver Plan
-                </a>
+                <a href="#reserva" class="bg-active-red text-white text-lg px-8 py-3 rounded-2xl brand-font shadow-lg hover:brightness-110 transition">Inscribirse ahora</a>
+                <a href="#lugar" class="bg-white text-ocean-blue text-lg px-8 py-3 rounded-2xl brand-font shadow-lg hover:bg-gray-100 transition">Explorar Samil</a>
             </div>
         </div>
-
         <div class="wave-separator text-sand-beige" style="transform: rotate(0);">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"></path>
-            </svg>
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="currentColor"></path></svg>
         </div>
     </header>
 
-    <!-- Actividades Grid -->
+    <!-- Actividades -->
     <section id="actividades" class="py-16 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl text-ocean-blue mb-4">Diversión y Aprendizaje</h2>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto">Fomentamos hábitos de vida activa desde edades tempranas con una perspectiva lúdica.</p>
-        </div>
-
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-3xl p-8 shadow-xl hover-card border-b-8 border-ocean-blue relative overflow-hidden">
-                <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-100 rounded-full blur-xl"></div>
-                <div class="text-5xl mb-6">🏊</div>
-                <h3 class="text-2xl text-gray-800 mb-3">Deportes Acuáticos</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Disfrutaremos de <strong>juegos en piscinas y en la playa</strong>. Actividades refrescantes y seguras supervisadas por monitores.</p>
+            <div class="bg-white rounded-3xl p-8 shadow-xl hover-card border-b-8 border-ocean-blue">
+                <div class="text-4xl mb-4">🏊</div>
+                <h3 class="text-xl mb-2">Agua y Diversión</h3>
+                <p class="text-gray-600 text-sm">Actividades en las piscinas de Samil y juegos en la orilla del mar.</p>
             </div>
-            
-            <div class="bg-white rounded-3xl p-8 shadow-xl hover-card border-b-8 border-active-red relative overflow-hidden">
-                <div class="absolute -right-4 -top-4 w-24 h-24 bg-red-100 rounded-full blur-xl"></div>
-                <div class="text-5xl mb-6">🤝</div>
-                <h3 class="text-2xl text-gray-800 mb-3">Convivencia</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Deportes colectivos (fútbol playa, voleibol) que refuerzan la cooperación, el respeto y la socialización.</p>
+            <div class="bg-white rounded-3xl p-8 shadow-xl hover-card border-b-8 border-active-red">
+                <div class="text-4xl mb-4">⚽</div>
+                <h3 class="text-xl mb-2">Multideporte</h3>
+                <p class="text-gray-600 text-sm">Fútbol playa, voley, tenis y juegos tradicionales adaptados.</p>
             </div>
-
-            <div class="bg-white rounded-3xl p-8 shadow-xl hover-card border-b-8 border-sun-yellow relative overflow-hidden">
-                <div class="absolute -right-4 -top-4 w-24 h-24 bg-yellow-100 rounded-full blur-xl"></div>
-                <div class="text-5xl mb-6">🏆</div>
-                <h3 class="text-2xl text-gray-800 mb-3">Desarrollo Integral</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Actividades recreativas e individuales diseñadas para mejorar la confianza y modificar actitudes hacia la actividad física.</p>
+            <div class="bg-white rounded-3xl p-8 shadow-xl hover-card border-b-8 border-sun-yellow">
+                <div class="text-4xl mb-4">🌳</div>
+                <h3 class="text-xl mb-2">Naturaleza</h3>
+                <p class="text-gray-600 text-sm">Exploración del entorno y actividades al aire libre con seguridad.</p>
             </div>
         </div>
     </section>
 
-    <!-- Filosofía -->
-    <section id="filosofia" class="py-16 bg-white border-y border-gray-100">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <h2 class="text-4xl text-active-red mb-6">Más que un campamento</h2>
-                <div class="space-y-6 text-lg text-gray-600">
-                    <p><strong>Rías Activas</strong> nace con el objetivo de revalorizar el ocio juvenil en 2026. No solo buscamos diversión, sino una <span class="text-ocean-blue font-bold">experiencia integral</span>.</p>
-                    <p>Nuestra metodología se basa en la modificación de actitudes hacia la práctica deportiva, evaluando el interés y la motivación.</p>
-                </div>
-            </div>
-            <div class="md:w-1/2">
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg transform rotate-2 h-48 w-full object-cover" alt="Deporte infantil">
-                    <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg transform -rotate-2 mt-8 h-48 w-full object-cover" alt="Equipo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tienda (Merchandising Profesional con Logo) -->
-    <section id="tienda" class="py-20 bg-gray-50 overflow-hidden">
+    <!-- Información sobre Samil -->
+    <section id="lugar" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                <div>
-                    <h2 class="text-4xl text-ocean-blue brand-font">Tienda Oficial 2026</h2>
-                    <p class="text-gray-500 mt-2 text-lg">Equipación técnica de alto rendimiento para nuestros campistas.</p>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <span class="text-ocean-blue font-bold uppercase tracking-widest text-sm">El Escenario Perfecto</span>
+                    <h2 class="text-4xl mt-2 mb-6">Samil: Nuestro Hogar</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        El campamento se desarrolla en la zona de <strong>Samil</strong>, el espacio recreativo más funcional de Vigo. Contamos con acceso directo a:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 p-1 rounded-full text-blue-600 text-xs">✓</span>
+                            <span><strong>Piscinas públicas:</strong> Seguras y vigiladas para juegos acuáticos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 p-1 rounded-full text-blue-600 text-xs">✓</span>
+                            <span><strong>Zonas Verdes:</strong> Amplios pinares para descansar y realizar talleres.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 p-1 rounded-full text-blue-600 text-xs">✓</span>
+                            <span><strong>Paseo marítimo:</strong> Infraestructura ideal para desplazarnos con seguridad.</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="flex gap-2">
-                    <span class="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm font-bold shadow-sm">Edición Limitada</span>
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full border-4 border-sun-yellow rounded-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Playa de Samil" class="relative z-10 rounded-3xl shadow-2xl">
                 </div>
             </div>
-            
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                
-                <!-- Producto 1: Camiseta Técnica -->
-                <div class="group bg-white rounded-[2.5rem] p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
-                    <div class="relative bg-gray-50 rounded-[2rem] overflow-hidden aspect-[4/5] mb-6">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Camiseta Blanca">
-                        
-                        <!-- Logo Circular Superpuesto -->
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                            <div class="w-32 h-32 border-4 border-ocean-blue/30 rounded-full flex flex-col items-center justify-center bg-white/20 backdrop-blur-[1px] merch-logo-overlay">
-                                <span class="text-[10px] font-bold text-ocean-blue tracking-[0.2em]">RÍAS ACTIVAS</span>
-                                <div class="w-12 h-[2px] bg-active-red my-1"></div>
-                                <span class="text-[8px] font-bold text-gray-800">VIGO 2026</span>
-                            </div>
-                        </div>
-                        
-                        <div class="absolute top-4 left-4 bg-ocean-blue text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">Técnica</div>
-                    </div>
-                    <div class="px-2 flex-grow">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Camiseta "Pro-Dry"</h3>
-                        <p class="text-gray-500 text-sm mb-4">Tejido microperforado ultra-transpirable.</p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="text-2xl font-black text-gray-900">18.00€</span>
-                            <div class="flex gap-1">
-                                <div class="w-4 h-4 rounded-full bg-white border border-gray-300"></div>
-                                <div class="w-4 h-4 rounded-full bg-ocean-blue"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="mt-6 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-ocean-blue hover:scale-[1.02] transition-all">Añadir al pack</button>
-                </div>
+        </div>
+    </section>
 
-                <!-- Producto 2: Sudadera Premium -->
-                <div class="group bg-white rounded-[2.5rem] p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
-                    <div class="relative bg-gray-50 rounded-[2rem] overflow-hidden aspect-[4/5] mb-6">
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Sudadera Azul">
-                        
-                        <!-- Logo Circular Superpuesto (Diferente estilo para ropa oscura) -->
-                        <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 pointer-events-none opacity-80">
-                            <div class="w-24 h-24 border-2 border-white rounded-full flex flex-col items-center justify-center merch-logo-overlay">
-                                <span class="text-[8px] font-bold text-white tracking-[0.2em]">RÍAS ACTIVAS</span>
-                                <span class="text-[6px] text-sun-yellow font-black">2026</span>
-                            </div>
-                        </div>
-
-                        <div class="absolute top-4 right-4 bg-active-red text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">Más popular</div>
-                    </div>
-                    <div class="px-2 flex-grow">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Sudadera "Comfort"</h3>
-                        <p class="text-gray-500 text-sm mb-4">Interior afelpado para los atardeceres en Samil.</p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="text-2xl font-black text-gray-900">32.00€</span>
-                            <div class="flex gap-1">
-                                <div class="w-4 h-4 rounded-full bg-ocean-blue"></div>
-                                <div class="w-4 h-4 rounded-full bg-gray-800"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="mt-6 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-ocean-blue hover:scale-[1.02] transition-all">Añadir al pack</button>
-                </div>
-
-                <!-- Producto 3: Mochila Active -->
-                <div class="group bg-white rounded-[2.5rem] p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
-                    <div class="relative bg-gray-50 rounded-[2rem] overflow-hidden aspect-[4/5] mb-6">
-                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Mochila">
-                        
-                        <!-- Logo en Mochila -->
-                        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 pointer-events-none">
-                            <div class="bg-white/90 px-4 py-2 rounded-lg shadow-sm merch-logo-overlay flex items-center gap-2 border border-gray-100">
-                                <span class="text-[10px] font-black text-gray-900">RÍAS ACTIVAS</span>
-                            </div>
-                        </div>
-
-                        <div class="absolute top-4 left-4 bg-forest-green text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">Nuevo</div>
-                    </div>
-                    <div class="px-2 flex-grow">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1">Mochila "Explorer"</h3>
-                        <p class="text-gray-500 text-sm mb-4">Impermeable y con compartimento para calzado.</p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="text-2xl font-black text-gray-900">24.50€</span>
-                            <span class="text-xs font-bold text-active-red">Últimas unidades</span>
-                        </div>
-                    </div>
-                    <button class="mt-6 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-ocean-blue hover:scale-[1.02] transition-all">Añadir al pack</button>
-                </div>
-
+    <!-- Tienda -->
+    <section id="tienda" class="py-24 dot-pattern">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl text-ocean-blue brand-font mb-2">Tienda Oficial</h2>
+                <p class="text-gray-500">Equipación profesional para los campistas</p>
             </div>
             
-            <div class="mt-16 bg-white p-8 rounded-[2rem] border-2 border-dashed border-gray-200 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-4">
-                    <div class="text-4xl">🎁</div>
-                    <div>
-                        <h4 class="font-bold text-xl">Pack Bienvenida Incluido</h4>
-                        <p class="text-gray-500">La inscripción incluye camiseta y mochila de regalo.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sudadera -->
+                <div class="bg-white rounded-[2rem] p-4 shadow-xl border border-gray-100 group">
+                    <div class="bg-gray-50 rounded-[1.5rem] overflow-hidden aspect-[4/5] mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition group-hover:scale-105" alt="Sudadera">
+                        <div class="absolute top-4 right-4 bg-active-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Top Ventas</div>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-gray-800">Sudadera Blue Comfort</h3>
+                        <p class="text-2xl font-black text-ocean-blue mt-2">32€</p>
                     </div>
                 </div>
-                <div class="text-ocean-blue font-bold text-lg cursor-pointer hover:underline">Ver guía de tallas →</div>
+
+                <!-- Camiseta -->
+                <div class="bg-white rounded-[2rem] p-4 shadow-xl border border-gray-100 group">
+                    <div class="bg-gray-50 rounded-[1.5rem] overflow-hidden aspect-[4/5] mb-4">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition group-hover:scale-105" alt="Camiseta">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-gray-800">Camiseta Técnica Pro</h3>
+                        <p class="text-2xl font-black text-ocean-blue mt-2">18€</p>
+                    </div>
+                </div>
+
+                <!-- Mochila -->
+                <div class="bg-white rounded-[2rem] p-4 shadow-xl border border-gray-100 group">
+                    <div class="bg-gray-50 rounded-[1.5rem] overflow-hidden aspect-[4/5] mb-4">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition group-hover:scale-105" alt="Mochila">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-gray-800">Mochila Explorer 25L</h3>
+                        <p class="text-2xl font-black text-ocean-blue mt-2">25€</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -295,6 +212,12 @@
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h3 class="text-xl font-bold text-gray-400 mb-10 uppercase tracking-widest">Colaboradores 2026</h3>
             <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+                <!-- FisioVigo -->
+                <div class="w-32 sponsor-grayscale flex flex-col items-center">
+                    <div class="bg-green-600 w-full py-2 rounded-lg text-white font-bold text-sm">FISIOVIGO</div>
+                    <span class="text-[10px] font-bold text-gray-500 mt-1">Salud Deportiva</span>
+                </div>
+                <!-- Otros -->
                 <div class="w-32 sponsor-grayscale">
                     <svg viewBox="0 0 200 60" fill="none"><rect width="200" height="60" fill="#0082C3" rx="5"/><text x="100" y="40" font-family="Arial" font-weight="900" font-size="28" fill="white" text-anchor="middle">DECATHLON</text></svg>
                 </div>
@@ -308,48 +231,64 @@
         </div>
     </section>
 
-    <!-- Reserva -->
-    <section id="reserva" class="py-20 bg-ocean-blue relative px-4">
-        <div class="max-w-3xl mx-auto bg-white rounded-[2rem] shadow-2xl overflow-hidden relative z-10">
-            <div class="bg-sun-yellow p-8 text-center border-b-4 border-dashed border-gray-300">
-                <h2 class="text-4xl text-gray-900 mb-2">Inscripción 2026</h2>
-                <p class="font-bold text-gray-700 opacity-70">¡Abierta preventa anticipada!</p>
-            </div>
-            <div class="p-8 md:p-12">
-                <div class="flex justify-between items-center mb-8 bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <span class="font-bold text-gray-600">Reserva de plaza:</span>
-                    <span class="text-4xl font-black text-ocean-blue">160€</span>
+    <!-- Reserva y Métodos de Pago -->
+    <section id="reserva" class="py-20 bg-ocean-blue px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-10 md:p-14">
+                        <h2 class="text-3xl brand-font mb-6">Haz tu Reserva</h2>
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Inscripción recibida!');">
+                            <input type="text" class="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-ocean-blue outline-none" placeholder="Nombre del campista">
+                            <input type="email" class="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-ocean-blue outline-none" placeholder="Email de contacto">
+                            <button class="w-full bg-active-red text-white font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition">Pagar 160€</button>
+                        </form>
+                    </div>
+                    <div class="bg-gray-50 p-10 md:p-14 border-l border-gray-100">
+                        <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-8">Pago 100% Seguro</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-3 rounded-lg border border-gray-200 flex items-center justify-center">
+                                <span class="text-blue-800 font-bold italic text-lg">VISA</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-gray-200 flex items-center justify-center">
+                                <span class="text-red-600 font-bold text-lg">MasterCard</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-gray-200 flex items-center justify-center">
+                                <span class="text-gray-800 font-bold text-lg"> Pay</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-gray-200 flex items-center justify-center">
+                                <span class="text-gray-600 font-bold text-lg">Google Pay</span>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-gray-500 italic">
+                            Aceptamos tarjetas de crédito/débito y pagos móviles. Recibirás tu confirmación tras realizar el pago.
+                        </p>
+                    </div>
                 </div>
-                <form class="space-y-6" onsubmit="event.preventDefault(); alert('¡Inscripción recibida!');">
-                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-ocean-blue outline-none" placeholder="Nombre del niño/a">
-                    <input type="email" class="w-full px-4 py-3 rounded-xl bg-gray-50 border-2 border-gray-200 focus:border-ocean-blue outline-none" placeholder="Email de contacto">
-                    <button type="submit" class="w-full bg-active-red text-white font-bold text-xl py-4 rounded-xl shadow-lg hover:bg-red-500 transition active:scale-95">Confirmar Plaza</button>
-                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contacto" class="bg-gray-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-[-3rem] relative z-20">
-        <div class="max-w-6xl mx-auto px-6 text-center md:text-left">
-            <div class="grid md:grid-cols-3 gap-12 mb-16">
-                <div>
-                    <h2 class="text-3xl mb-6 brand-font"><span class="text-ocean-blue">RÍAS</span><span class="text-active-red">ACTIVAS</span></h2>
-                    <p class="text-gray-400">Líderes en ocio juvenil en Samil. Verano 2026.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-sun-yellow">Ubicación</h4>
-                    <p class="text-gray-300">Avda. Samil, s/n<br>36212 Vigo, Pontevedra</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-sun-yellow">Contacto</h4>
-                    <p class="text-gray-300">campamento@riasactivas.es<br>+34 986 00 00 00</p>
-                </div>
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left border-b border-gray-800 pb-12 mb-8">
+            <div>
+                <h4 class="brand-font text-2xl text-ocean-blue mb-4">RÍAS ACTIVAS</h4>
+                <p class="text-gray-400 text-sm">Organizando el mejor ocio juvenil en Vigo desde 2024.</p>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                © 2026 Campamento Multideporte Rías Activas. Todos los derechos reservados.
+            <div>
+                <h5 class="text-sun-yellow font-bold mb-4">Ubicación</h5>
+                <p class="text-gray-400 text-sm italic">Avenida de Samil, Vigo</p>
+            </div>
+            <div>
+                <h5 class="text-sun-yellow font-bold mb-4">Contacto</h5>
+                <p class="text-gray-400 text-sm">hola@riasactivas.es</p>
+                <p class="text-white font-bold mt-2">911 234 567</p>
             </div>
         </div>
+        <p class="text-center text-gray-600 text-xs">© 2026 Rías Activas. Proyecto educativo y deportivo.</p>
     </footer>
 
 </body>
